@@ -1,7 +1,7 @@
-# Task 5 - UFW Firewall Configuration
+# Task 5 - Firewall Configuration (UFW)
 
 ## 📌 Objective
-To secure the server using UFW (Uncomplicated Firewall).
+Secure server by restricting SSH access.
 
 ## 🔧 Commands Executed
 
@@ -13,21 +13,7 @@ sudo ufw allow from 13.207.4.89 to any port 22
 sudo ufw allow 80
 sudo ufw allow 8000
 
-## ⚙️ Configuration Steps
-
-1. Enabled UFW firewall
-2. Removed default SSH access from anywhere
-3. Allowed SSH access only from my IP (13.207.4.89)
-4. Opened port 80 for web traffic
-5. Opened port 8000 for application
-6. Verified rules using `ufw status`
-
 ## 🔐 Result
 
-- SSH access restricted to specific IP
-- Public access allowed for HTTP (80) and app port (8000)
-- Server secured successfully
-
-## 📄 Files Used
-
-No additional files used
+- SSH restricted to specific IP
+- Ports 80 and 8000 open

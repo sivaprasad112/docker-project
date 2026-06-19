@@ -1,6 +1,6 @@
 # Task 5 - Firewall Configuration (UFW)
 
-## 🔧 Commands Executed
+##  M-' Commands Executed
 
 sudo ufw enable
 sudo ufw status numbered
@@ -19,6 +19,8 @@ sudo ufw allow 8000
 5. Allowed application traffic on port 8000
 6. Verified firewall rules using `ufw status`
 
-## 📄 Files Used
+##  ~D Files Used
 
 No additional files were used in this task.
+
+
