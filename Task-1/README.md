@@ -1,26 +1,99 @@
-# Task 5 - Firewall Configuration (UFW)
+# Task 1 - Server Setup and SSH Configuration
 
-##  M-' Commands Executed
+## 📌 Objective
 
-sudo ufw enable
-sudo ufw status numbered
-sudo ufw delete 1
-sudo ufw delete 2
-sudo ufw allow from 13.207.4.89 to any port 22
-sudo ufw allow 80
-sudo ufw allow 8000
+Provision a Linux server and configure secure SSH access using key-based authentication.
 
-## ⚙️ Configuration Steps
+---
 
-1. Installed and enabled UFW firewall
-2. Allowed SSH access only from my IP address (13.207.4.89)
-3. Removed default SSH access from anywhere
-4. Allowed HTTP traffic on port 80
-5. Allowed application traffic on port 8000
-6. Verified firewall rules using `ufw status`
+## 🖥️ Environment
 
-##  ~D Files Used
+* OS: Ubuntu (Virtual Machine)
 
-No additional files were used in this task.
+---
 
+## ⚙️ Steps Performed
+
+### 1. Update System
+
+sudo apt update
+sudo apt upgrade -y
+
+---
+
+### 2. Install SSH
+
+sudo apt install openssh-server -y
+sudo systemctl start ssh
+sudo systemctl enable ssh
+
+---
+
+### 3. Check SSH Status
+
+sudo systemctl status ssh
+
+---
+
+### 4. Find IP Address
+
+ip a
+
+---
+
+### 5. Connect via SSH (Password)
+
+ssh username@server_ip
+
+---
+
+### 6. Generate SSH Key
+
+ssh-keygen
+
+---
+
+### 7. Copy Key to Server
+
+ssh-copy-id username@server_ip
+
+---
+
+### 8. Login Without Password
+
+ssh username@server_ip
+
+---
+
+### 9. Disable Password Login (Security)
+
+sudo nano /etc/ssh/sshd_config
+
+Change:
+PasswordAuthentication no
+
+Restart:
+sudo systemctl restart ssh
+
+---
+
+## 🔐 Security Features
+
+* SSH enabled
+* Key-based authentication configured
+* Password login disabled
+
+---
+
+## 📂 Files Used
+
+* ~/.ssh/id_rsa
+* ~/.ssh/id_rsa.pub
+* /etc/ssh/sshd_config
+
+---
+
+## ✅ Expected Outcome
+
+Secure SSH login without password using SSH keys.
 
